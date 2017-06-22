@@ -11,7 +11,7 @@ class CardsController < ApplicationController
   def add
     if request.post? then
       Card.create(card_params)
-      goback
+      redirect_to '/cards'
     else
       @card = Card.new
     end
@@ -21,13 +21,13 @@ class CardsController < ApplicationController
     @card = Card.find(params[:id])
     if request.patch? then
       @card.update(card_params)
-      goback
+      redirect_to '/cards'
     end
   end
 
   def delete
     Card.find(params[:id]).destroy
-    goback
+    redirect_to '/cards'
   end
 
   private
@@ -35,8 +35,4 @@ class CardsController < ApplicationController
     params.require(:card).permit(:title, :author, :price, :publisher, :memo, :evaluation)
   end
 
-  private
-  def goback
-    redirect_to '/cards'
-  end
 end
