@@ -1,1 +1,35 @@
 <h1>Cards#add</h1>
+<p>読書カードデータを入力</p>
+<table>
+  <%= form_for(@card, url:{controller:'cards', action:'add'}) do |form| %>
+  <tr>
+    <th>タイトル</th>
+    <td><%= form.text_field :title, {size:29} %></td>
+  </tr>
+  <tr>
+    <th>著者</th>
+    <td><%= form.text_field :author, {size:29} %></td>
+  </tr>
+  <tr>
+    <th>価格</th>
+    <td><%= form.text_field :price, {size:29} %></td>
+  </tr>
+  <tr>
+    <th>出版社</th>
+    <td><%= form.text_field :publisher, {size:29} %></td>
+  </tr>
+  <tr>
+    <th>評価</th>
+    <td><%= form.text_field :evaluation, {size:29} %></td>
+  </tr>
+  <tr>
+    <th>コメント</th>
+    <td><%= form.text_area :memo. {cols:29, rows:10} %></td>
+  </tr>
+  <tr>
+    <th></th>
+    <td><%= form.submit "保存" %></td>
+  </tr>
+  <% end %>
+</table>
+<p class="link"><a href="/cards">back to top page</a></p>

@@ -1,2 +1,34 @@
 <h1>Cards#show</h1>
-<p>Find me in app/views/cards/show.html.erb</p>
+<p><%= @card.title %>の読書データ</p>
+<table>
+  <tr>
+    <th width="100px">ID</th>
+    <td><%= @card.id %></td>
+  </tr>
+  <tr>
+    <th>タイトル</th>
+    <td><%= @card.title %></td>
+  </tr>
+  <tr>
+    <th>著者</th>
+    <td><%= @card.author %></td>
+  </tr>
+  <tr>
+    <th>価格</th>
+    <td><%= @card.price %></td>
+  </tr>
+  <tr>
+    <th>出版社</th>
+    <td><%= @card.publisher %></td>
+  </tr>
+  <tr>
+    <th>評価</th>
+    <td><%= @card.evaluation %></td>
+  </tr>
+  <tr>
+    <th>コメント(感想等)</th>
+    <td><%= @card.memo %></td>
+  </tr>
+</table>
+
+<p class="link"><a href="/cards">back to top page</a></p>
