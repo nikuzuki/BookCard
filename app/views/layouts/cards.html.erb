@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cards</title>
+    <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'cards',
+    'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'cards.js',
+    'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="card">
+      <%= yield %>
+    </div>
+  </body>
+</html>
