@@ -26,5 +26,17 @@ class CardsController < ApplicationController
   end
 
   def delete
+    Card.find(params[:id]).destroy
+    goback
+  end
+
+  private
+  def card_params
+    params.require(:card).permit(:title, :author, :price, :publisher, :memo, :evaluation)
+  end
+
+  private
+  def goback
+    redirect_to '/cards'
   end
 end
